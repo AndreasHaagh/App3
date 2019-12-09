@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace WeahterApp
 {
@@ -16,6 +17,19 @@ namespace WeahterApp
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        async private void Get_Weahter_BTN_Clicked(object sender, EventArgs e)
+        {
+            var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+            var location = await Geolocation.GetLocationAsync(request);
+
+            Data_LAB.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}";
+        }
+
+        private void Settings_BTN_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

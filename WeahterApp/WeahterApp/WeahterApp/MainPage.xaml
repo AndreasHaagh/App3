@@ -8,9 +8,12 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Button x:Name="Settings_BTN" Text="settings" HorizontalOptions="End" Clicked="Settings_BTN_Clicked"></Button>
+        <Label Text="Weather App" HorizontalOptions="Center" VerticalOptions="Start" FontSize="Title"/>
+        <Label x:Name="Data_LAB" Text="Welcome to Weather App" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="Subtitle" />
+        <Entry x:Name="City_Entry" Placeholder="Enter a city name" HorizontalTextAlignment="Center"></Entry>
+        <Button x:Name="GPS_Weather_BTN" Text="Get Local Weather" Clicked="Get_Weahter_BTN_Clicked"></Button>
+        <Button x:Name="City_Weather_BTN" Text="Get Weather of City" Clicked="Get_Weahter_BTN_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>
