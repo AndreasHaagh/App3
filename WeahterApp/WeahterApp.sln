@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeahterApp.Android", "Weaht
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeahterApp.iOS", "WeahterApp\WeahterApp.iOS\WeahterApp.iOS.csproj", "{2D6E27F8-0DA5-4EE7-8228-54F483B175BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeahterApp", "WeahterApp\WeahterApp\WeahterApp.csproj", "{D53CF0E3-3DA9-467A-8BF3-41FD4EEECBF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeahterApp", "WeahterApp\WeahterApp\WeahterApp.csproj", "{D53CF0E3-3DA9-467A-8BF3-41FD4EEECBF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
