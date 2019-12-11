@@ -4,12 +4,21 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="WeahterApp.SettingsPage">
+             x:Class="WeahterApp.SettingsPage"
+             Style="{StaticResource contentPageStyle}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Weather App" HorizontalOptions="Center" VerticalOptions="Start" Margin="0, 45, 0, 0" FontSize="Title"/>
+
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Label Text="Backgorund color" HorizontalOptions="Center" FontSize="Large"/>
+                <Entry x:Name="background_entry"></Entry>
+            
+                <Label Text="Text color" HorizontalOptions="Center" Margin="0, 20, 0, 0" FontSize="Large"/>
+                <Entry x:Name="text_entry"></Entry>
+
+                <Button x:Name="Apply_BTN" Text="Apply" Clicked="Apply_BTN_Clicked"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

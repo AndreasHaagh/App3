@@ -12,9 +12,18 @@ namespace WeahterApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
-        public SettingsPage()
+        MainPage main;
+        public SettingsPage(MainPage main)
         {
             InitializeComponent();
+            this.main = main;
+        }
+
+        private void Apply_BTN_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.Properties["backgroundColor"] = background_entry.Text;
+            Application.Current.Properties["textColor"] = text_entry.Text;
+            Navigation.PopModalAsync();
         }
     }
 }

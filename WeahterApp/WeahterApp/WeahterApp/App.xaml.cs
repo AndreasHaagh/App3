@@ -10,21 +10,14 @@ namespace WeahterApp
         {
             InitializeComponent();
 
-            if (!Application.Current.Properties.ContainsKey("color"))
-            {
-                Application.Current.Properties["color"] = "#FFFFFF";
-            }
+            if (!Application.Current.Properties.ContainsKey("backgroundColor"))
+                Application.Current.Properties["backgroundColor"] = "#FFFFFF";
 
-            var contentPageStyle1 = new Style(typeof(ContentPage))
-            {
-                Setters =
-                {
-                    new Setter {Property = ContentPage.BackgroundColorProperty, Value = Color.FromHex(Application.Current.Properties["color"].ToString())}
-                }
-            };
+            if (!Application.Current.Properties.ContainsKey("textColor"))
+                Application.Current.Properties["textColor"] = "#000000";
 
-            Resources = new ResourceDictionary();
-            Resources.Add("ContentPageStyle", contentPageStyle1);
+
+            SetStyleResources();
 
             MainPage = new NavigationPage(new MainPage());
         }
@@ -39,6 +32,47 @@ namespace WeahterApp
 
         protected override void OnResume()
         {
+        }
+
+        private void SetStyleResources()
+        {
+            var contentPageStyle = new Style(typeof(ContentPage))
+            {
+                Setters =
+                {
+                    new Setter {Property = ContentPage.BackgroundColorProperty, Value = Color.FromHex(Application.Current.Properties["backgroundColor"].ToString())}
+                }
+            };
+
+            var labelStyle = new Style(typeof(Label))
+            {
+                Setters =
+                {
+                    new Setter {Property = Label.TextColorProperty, Value = Color.FromHex(Application.Current.Properties["textColor"].ToString())}
+                }
+            };
+
+            var buttonStyle = new Style(typeof(Button))
+            {
+                Setters =
+                {
+                    new Setter {Property = Button.TextColorProperty, Value = Color.FromHex(Application.Current.Properties["textColor"].ToString())}
+                }
+            };
+
+            var entryStyle = new Style(typeof(Entry))
+            {
+                Setters =
+                {
+                    new Setter {Property = Entry.TextColorProperty, Value = Color.FromHex(Application.Current.Properties["textColor"].ToString())}
+                }
+            };
+
+            Resources = new ResourceDictionary();
+            Resources.Add("contentPageStyle", contentPageStyle);
+            Resources.Add("labelStyle", labelStyle);
+            Resources.Add("buttonStyle", buttonStyle);
+            Resources.Add("entryStyle", entryStyle);
         }
     }
 }
