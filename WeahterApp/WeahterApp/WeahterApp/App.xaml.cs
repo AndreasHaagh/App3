@@ -10,7 +10,23 @@ namespace WeahterApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            if (!Application.Current.Properties.ContainsKey("color"))
+            {
+                Application.Current.Properties["color"] = "#FFFFFF";
+            }
+
+            var contentPageStyle1 = new Style(typeof(ContentPage))
+            {
+                Setters =
+                {
+                    new Setter {Property = ContentPage.BackgroundColorProperty, Value = Color.FromHex(Application.Current.Properties["color"].ToString())}
+                }
+            };
+
+            Resources = new ResourceDictionary();
+            Resources.Add("ContentPageStyle", contentPageStyle1);
+
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

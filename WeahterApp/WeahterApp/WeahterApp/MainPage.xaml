@@ -4,7 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="WeahterApp.MainPage">
+             x:Class="WeahterApp.MainPage"
+             x:Name="MainContent"
+             Style="{StaticResource ContentPageStyle}">
 
     <StackLayout>
         <!-- Place new controls here -->
@@ -15,6 +17,8 @@
             <Label x:Name="Temp_LAB" HorizontalTextAlignment="Center" FontSize="Subtitle" />
             <Label x:Name="Error_LAB" HorizontalTextAlignment="Center" TextColor="Red" FontSize="Subtitle" />
         </StackLayout>
+        <Entry x:Name="test_color"></Entry>
+        <Button x:Name="save_color" Text="save color" Clicked="save_color_Clicked"></Button>
         <Entry x:Name="City_Entry" Placeholder="Enter a city name" HorizontalTextAlignment="Center"></Entry>
         <Button x:Name="GPS_Weather_BTN" Text="Get Local Weather" Clicked="Get_Weahter_BTN_Clicked"></Button>
         <Button x:Name="City_Weather_BTN" Text="Get Weather of City" Clicked="Get_Weahter_BTN_Clicked"></Button>

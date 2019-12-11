@@ -23,6 +23,7 @@ namespace WeahterApp
         {
             dataService = new DataService();
             InitializeComponent();
+            test_color.Text = Application.Current.Properties["color"].ToString();
         }
 
         async private void Get_Weahter_BTN_Clicked(object sender, EventArgs e)
@@ -67,7 +68,13 @@ namespace WeahterApp
 
         private void Settings_BTN_Clicked(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new SettingsPage());
+        }
 
+        private void save_color_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.Properties["color"] = test_color.Text;
+            MainContent.BackgroundColor = Color.FromHex(test_color.Text);
         }
     }
 }

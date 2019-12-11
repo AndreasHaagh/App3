@@ -24,7 +24,7 @@ namespace WeahterApp.Services
                     RootObject data = JsonConvert.DeserializeObject<RootObject>(json);
                     return data;
                 }
-                catch (WebException e)
+                catch (WebException)
                 {
                     return new RootObject();
                 }
