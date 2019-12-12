@@ -52,14 +52,6 @@ namespace WeahterApp
                 }
             };
 
-            var buttonStyle = new Style(typeof(Button))
-            {
-                Setters =
-                {
-                    new Setter {Property = Button.TextColorProperty, Value = Color.FromHex(Application.Current.Properties["textColor"].ToString())}
-                }
-            };
-
             var entryStyle = new Style(typeof(Entry))
             {
                 Setters =
@@ -71,7 +63,6 @@ namespace WeahterApp
             Resources = new ResourceDictionary();
             Resources.Add("contentPageStyle", contentPageStyle);
             Resources.Add("labelStyle", labelStyle);
-            Resources.Add("buttonStyle", buttonStyle);
             Resources.Add("entryStyle", entryStyle);
         }
     }

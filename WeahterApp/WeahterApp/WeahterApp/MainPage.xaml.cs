@@ -24,7 +24,8 @@ namespace WeahterApp
             dataService = new DataService();
             InitializeComponent();
 
-            test_color.Text = Application.Current.Properties["color"].ToString();
+            Background_Color_Entry.Text = Application.Current.Properties["backgroundColor"].ToString();
+            Text_Color_Entry.Text = Application.Current.Properties["textColor"].ToString();
         }
 
         async private void Get_Weahter_BTN_Clicked(object sender, EventArgs e)
@@ -67,15 +68,21 @@ namespace WeahterApp
             Error_LAB.Text = "";
         }
 
-        private void Settings_BTN_Clicked(object sender, EventArgs e)
+        private void Save_Color_BTN_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SettingsPage(this));
-        }
+            Application.Current.Properties["backgroundColor"] = Background_Color_Entry.Text;
+            Application.Current.Properties["textColor"] = Text_Color_Entry.Text;
+            MainContent.BackgroundColor = Color.FromHex(Background_Color_Entry.Text);
+            
+            City_Entry.TextColor = Color.FromHex(Text_Color_Entry.Text);
+            Background_Color_Entry.TextColor = Color.FromHex(Text_Color_Entry.Text);
+            Text_Color_Entry.TextColor = Color.FromHex(Text_Color_Entry.Text);
 
-        private void save_color_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.Properties["color"] = test_color.Text;
-            MainContent.BackgroundColor = Color.FromHex(test_color.Text);
+            Title.TextColor = Color.FromHex(Text_Color_Entry.Text);
+            City_LAB.TextColor = Color.FromHex(Text_Color_Entry.Text);
+            Temp_LAB.TextColor = Color.FromHex(Text_Color_Entry.Text);
+            Background_LAB.TextColor = Color.FromHex(Text_Color_Entry.Text);
+            Text_LAB.TextColor = Color.FromHex(Text_Color_Entry.Text);
         }
     }
 }

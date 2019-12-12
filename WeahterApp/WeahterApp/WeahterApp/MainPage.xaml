@@ -10,18 +10,34 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Button x:Name="Settings_BTN" Text="settings" HorizontalOptions="End" Clicked="Settings_BTN_Clicked" Style="{StaticResource buttonStyle}"></Button>
-        <Label Text="Weather App" HorizontalOptions="Center" VerticalOptions="Start" Style="{StaticResource labelStyle}" FontSize="Title"/>
+        <Label x:Name="Title" Text="Weather App" HorizontalOptions="Center" VerticalOptions="Start" Style="{StaticResource labelStyle}" FontSize="Title"/>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
             <Label x:Name="City_LAB" HorizontalTextAlignment="Center" Style="{StaticResource labelStyle}" FontSize="Subtitle" />
             <Label x:Name="Temp_LAB" HorizontalTextAlignment="Center" Style="{StaticResource labelStyle}" FontSize="Subtitle" />
             <Label x:Name="Error_LAB" HorizontalTextAlignment="Center" TextColor="Red" FontSize="Subtitle" />
         </StackLayout>
-        <Entry x:Name="test_color"></Entry>
-        <Button x:Name="save_color" Text="save color" Clicked="save_color_Clicked"></Button>
-        <Entry x:Name="City_Entry" Placeholder="Enter a city name" HorizontalTextAlignment="Center" Style="{StaticResource entryStyle}"></Entry>
-        <Button x:Name="GPS_Weather_BTN" Text="Get Local Weather" Clicked="Get_Weahter_BTN_Clicked" Style="{StaticResource buttonStyle}"></Button>
-        <Button x:Name="City_Weather_BTN" Text="Get Weather of City" Clicked="Get_Weahter_BTN_Clicked" Style="{StaticResource buttonStyle}"></Button>
+        <StackLayout Margin="0, 0, 0, 15">
+            <Entry x:Name="City_Entry" Placeholder="Enter a city name" HorizontalTextAlignment="Center" Style="{StaticResource entryStyle}"></Entry>
+            <Button x:Name="GPS_Weather_BTN" Text="Get Local Weather" Clicked="Get_Weahter_BTN_Clicked"></Button>
+            <Button x:Name="City_Weather_BTN" Text="Get Weather of City" Clicked="Get_Weahter_BTN_Clicked"></Button>
+        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" x:Name="Background_LAB" HorizontalTextAlignment="Center" Text="background color" Style="{StaticResource labelStyle}"/>
+            <Label Grid.Row="0" Grid.Column="1" x:Name="Text_LAB" HorizontalTextAlignment="Center" Text="text color" Style="{StaticResource labelStyle}"/>
+            <Entry Grid.Row="1" Grid.Column="0" x:Name="Background_Color_Entry" Style="{StaticResource entryStyle}"></Entry>
+            <Entry Grid.Row="1" Grid.Column="1" x:Name="Text_Color_Entry" Style="{StaticResource entryStyle}"></Entry>
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Save Color" x:Name="Save_color_BTN" Clicked="Save_Color_BTN_Clicked"></Button>
+        </Grid>
+
     </StackLayout>
 
 </ContentPage>
